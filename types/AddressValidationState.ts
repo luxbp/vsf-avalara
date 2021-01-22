@@ -1,2 +1,1 @@
-export default interface AddressValidationState {
-}
+export default interface AddressValidationState {}

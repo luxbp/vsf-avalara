@@ -1,13 +1,10 @@
-import { VueStorefrontModule, VueStorefrontModuleConfig } from '@vue-storefront/core/lib/module'
 import { addressValidationModule } from './store/address-validation'
+import { StorefrontModule } from '@vue-storefront/core/lib/modules'
+import { StorageManager } from '@vue-storefront/core/lib/storage-manager'
 
 export const KEY = 'avalara'
 
-const moduleConfig: VueStorefrontModuleConfig = {
-  key: KEY,
-  store: { modules: [
-    { key: KEY + '-address-validation', module: addressValidationModule }
-  ] }
+export const AvalaraModule: StorefrontModule = function ({ store, appConfig }) {
+  StorageManager.init(KEY)
+  store.registerModule(KEY + '-address-validation', addressValidationModule)
 }
-
-export const Avalara = new VueStorefrontModule(moduleConfig)
