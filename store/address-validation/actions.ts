@@ -17,7 +17,7 @@ export const actions: ActionTree<AddressValidationState, RootState> = {
     return new Promise((resolve, reject) => {
       fetch(url, {
         method: 'POST',
-        headers: { 
+        headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
@@ -35,5 +35,5 @@ export const actions: ActionTree<AddressValidationState, RootState> = {
         reject(err)
       })
     })
-  },
+  }
 }

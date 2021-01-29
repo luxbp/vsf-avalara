@@ -7,9 +7,9 @@ import { state } from './state'
 import AddressValidationState from '../../types/AddressValidationState'
 
 export const addressValidationModule: Module<AddressValidationState, RootState> = {
-    namespaced: true,
-    mutations,
-    actions,
-    getters,
-    state
+  namespaced: true,
+  mutations,
+  actions,
+  getters,
+  state
 }
